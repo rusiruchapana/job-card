@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Photo />
+      <Details />
+      <SkillSet />
+    </div>
+  );
+}
+
+function Photo() {
+  return <img src="photoes/me.jpg" alt="Rusiru chapana" />;
+}
+
+function Details() {
+  return (
+    <div>
+      <h1>Rusiru chapana</h1>
+      <p>
+        Full-stack web developer and teacher at Udemy.When not coding or
+        preparing a course.I like to play board games, to cook(and eat), or to
+        just enjoy the Portuguese sun at the beach.
+      </p>
+    </div>
+  );
+}
+
+function SkillSet() {
+  return (
+    <div>
+      <skills skill="HTML + CSS" emoji="emojies/arm.png" />
+    </div>
+  );
+}
+
+function skills(props) {
+  return (
+    <div>
+      <p>{props.skill}</p>
+      <img src={props.emoji} alt={props.skill} />
     </div>
   );
 }
